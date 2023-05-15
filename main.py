@@ -1,17 +1,18 @@
 print('Welcome to my quiz!')
 
 playing = input("Do you want to play? ")
-
-if playing != "yes":
+if playing.lower() != "yes":
     quit()
 
 print("Ok, lets play!")
+score = 0
 
 answer = input("What is the name of the pub at the entrance to Diagon Alley? ")
 answer = answer.lower()
 
 if answer == "the leaky cauldron" or answer == "leaky cauldron": 
     print('Correct!')
+    score +=1
 else: 
     print("Incorrect")
 
@@ -21,6 +22,7 @@ answer = answer.lower()
 
 if answer == "hedwig": 
     print('Correct!')
+    score +=1
 else: 
     print("Incorrect")
 
@@ -33,14 +35,15 @@ required_code_names = ["moony", "wormtail", "padfoot", "prongs"]
 
 if set(code_names) == set(required_code_names):
     print('Correct!')
+    score +=1
 else:
     print('Incorrect')
 
 answer = input("What is Voldemort's full real name? ")
 answer = answer.lower()
 if answer == "tom marvolo riddle":
-     
     print('Correct!')
+    score +=1
 else: 
     print("Incorrect")
 
@@ -48,6 +51,7 @@ answer = input("What painting guards the entrance to the Gryffindor common room?
 answer = answer.lower()
 if answer == "the fat lady" or answer == "fat lady": 
     print('Correct!')
+    score +=1
 else: 
     print("Incorrect")
 
@@ -56,6 +60,7 @@ answer = input("Where in Kings Cross Station does the Hogwarts Express stop? ")
 answer = answer.lower()
 if answer == "platform 9 3/4" or answer == "platform nine and three quarters": 
     print('Correct!')
+    score +=1
 else: 
     print("Incorrect")
 
@@ -64,6 +69,7 @@ answer = input("The wizarding version of marbles is called what? ")
 answer = answer.lower()
 if answer == "gobstones": 
     print('Correct!')
+    score +=1
 else: 
     print("Incorrect")
 
@@ -73,6 +79,7 @@ required_answer = "weasleys' wizard wheezes"
 
 if answer == required_answer.replace("'", ""):
     print('Correct!')
+    score +=1
 else:
     print('Incorrect')
 
@@ -82,6 +89,7 @@ answer = input("In book 5, Snape is assigned to teach what kind of magic? ")
 answer = answer.lower()
 if answer == "occlumency": 
     print('Correct!')
+    score +=1
 else: 
     print("Incorrect")
 
@@ -90,6 +98,10 @@ answer = input("What does O.W.L.s for one of the main wizarding exams stand for?
 answer = answer.lower()
 if answer == "ordinary wizarding level": 
     print('Correct!')
+    score +=1
 else: 
     print("Incorrect")
 
+
+print("You got " + str(score) + " questions correct!")
+print("You got " + str((score/10) * 100) + "%")
